@@ -1,0 +1,13 @@
+<header>
+    <h1>{{title}}</h1>
+</header>
+<main>
+    <form class="weather-form" (submit)="create($event, titleInput)">
+        <input type="text" placeholder="Ваш город?" #titleInput>
+        <button type="submit">Найти</button>
+    </form>
+    <section class="weather-list" *ngIf="cityWeather.length">
+        <List *ngFor="let item of cityWeather" [item]="item" (deleted)="onCityDelete($event)">
+        </List>
+    </section>
+</main>
