@@ -14,3 +14,7 @@
 .weather-item:hover .actions {
     opacity: 1;
 }
+
+.temperature{
+    padding-left: 15px;
+}

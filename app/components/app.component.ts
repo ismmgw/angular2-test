@@ -19,14 +19,15 @@ export class AppComponent implements OnInit{
     }
 
     ngOnInit() {
-        this.service.getCity().then(Weather=>this.cityWeather = Weather)
+        this.service.getCity().then(Weather=>this.cityWeather = Weather);
+        //this.service.addCityHttp('Барнаул');
     }
 
     create(event: Event, input: HTMLInputElement){
         if (input.value) {
             event.preventDefault();
-            let city: City = new City(input.value);
-            this.service.addCity(city);
+            //let city: City = new City(input.value);
+            this.service.addCityHttp(input.value);
             input.value = '';
         }
 
